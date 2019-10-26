@@ -6,7 +6,7 @@ def refresh_data():
     conn = sqlite3.connect('stocks.db')    
     c = conn.cursor()
     with conn:
-        c.execute("DROP TABLE stock_data")
+        c.execute("DROP TABLE IF EXISTS stock_data")
         c.execute("CREATE TABLE IF NOT EXISTS stock_data (stocktype text, stockdate text, open_price integer, high_price integer, low_price integer, close_price integer, last_closing_price integer, percent_change integer)")
         print('Table created successfully..!!!')
 
