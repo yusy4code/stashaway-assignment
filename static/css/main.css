@@ -72,6 +72,7 @@ nav a:focus {
 
 .sub-menu li:last-child {
   margin-left: auto;
+  margin-right: 0;
 }
 
 .sub-menu li {
@@ -147,15 +148,6 @@ nav a:focus {
   margin-left: 1rem;
 }
 
-.sub-menu-right {
-  color: #fff;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
-  margin-top: -10px;
-}
-
 .chart-filter {
   display: flex;
   justify-content: space-between;
@@ -164,7 +156,6 @@ nav a:focus {
 
 .currency ul,
 .range ul {
-  color: black;
   display: flex;
   list-style: none;
 }
@@ -182,6 +173,7 @@ nav a:focus {
 .currency a,
 .range a {
   color: grey;
+  cursor: pointer;
 }
 
 .range .selected-range,
@@ -193,14 +185,9 @@ nav a:focus {
   padding: 0.5rem;
 }
 
-.chart {
-  width: 100%;
-  height: 300px;
-  border: 1px solid grey;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.chart-text {
+  font-size: 0.75rem;
+  padding: 0.5rem 0;
 }
 
 footer {
@@ -213,8 +200,4 @@ footer {
 
 footer p {
   padding: 0.2rem;
-}
-
-.br {
-  border: 1px solid black;
 }

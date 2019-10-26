@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Chart Form</title>
+    <style>
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .row {
+            padding: 1rem;
+            margin: 1rem;
+        }
+        
+        .row input {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <Form action="chart">
+        <label for="stockdate">Date :</label>
+        <input type="text" placeholder="YYYYMMDD" name="stockdate">
+        <div class="row">
+            <label for="stock1">Stock1</label>
+            <input name="stock1" type="number">
+            <label for="bond1">Bond1</label>
+            <input name="bond1" type="number">
+        </div>
+        <br>
+        <span>Vs</span>
+        <br>
+        <div class="row">
+            <label for="stock2">Stock2</label>
+            <input name="stock2" type="number">
+            <label for="bond2">Bond2</label>
+            <input name="bond2" type="number">
+        </div>
+        <br>
+        <input type="submit" value="Compare">
+    </Form>
+</body>
+
+</html>

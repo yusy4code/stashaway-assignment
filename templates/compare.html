@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>StashAway - Assignment</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
         <div class="header-container">
             <header class="header">
                 <div>
-                    <img src="./logo.PNG">
+                    <a href="/"><img src="/static/images/logo.PNG"></a>
                 </div>
                 <nav>
                     <ul>
@@ -47,7 +48,7 @@
             </div>
             <div class="vs">vs</div>
             <div class="comparison-right">
-                <select class="comparison-input">
+                <select class="comparison-input" id="selectBox" onchange="changeFunc();">
                     <option value="" selected="selected" hidden="hidden">Which benchmark do you want to compare</option>
                     <option value="60S40B">60% Stock and 40% Bond</option>
                     <option value="20S80B">20% Stock and 80% Bond</option>
@@ -58,12 +59,12 @@
         <div class="chart-filter">
             <div class="range">
                 <ul>
-                    <li><a href="#">1 month</a></li>
-                    <li><a href="#">6 month</a></li>
-                    <li><a href="#">Year-to-date</a></li>
-                    <li><a href="#">1 Year</a></li>
-                    <li><a href="#">5 Year</a></li>
-                    <li><a href="#" class="selected-range">Max</a></li>
+                    <li><a id="1M" onclick="getRange(this.id);">1 month</a></li>
+                    <li><a id="6M" onclick="getRange(this.id);">6 month</a></li>
+                    <li><a id="Y2D" onclick="getRange(this.id);">Year-to-date</a></li>
+                    <li><a id="1Y" onclick="getRange(this.id);">1 Year</a></li>
+                    <li><a id="5Y" onclick="getRange(this.id);">5 Year</a></li>
+                    <li><a id="MAX" onclick="getRange(this.id);" class="selected-range">Max</a></li>
                 </ul>
             </div>
             <div class="currency">
@@ -74,16 +75,23 @@
             </div>
         </div>
         <br>
-        <div class="chart">
-            <p>Actual chart will come here</p>
+        <div>
+            <h4>
+                Portfolio value based on gross returns
+            </h4>
+            <p class="chart-text">Gross returns and exchange rates sourced from Bloomberg as of 2nd May 2019</p>
         </div>
+
+        <div id="chartContainer" style="height: 300px; width: 100%; margin:0 auto;">
+        </div>
+
     </div>
     <footer>
         <p>&copy; Asia Wealth Platform Pte Ltd</p>
         <p>Licensed by the Monetary Authority of Singapore</p>
         <p>Privacy | Platform Agreement | Support</p>
     </footer>
-
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
